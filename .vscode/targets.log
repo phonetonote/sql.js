@@ -6,8 +6,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 
-# Make data base, printed on Tue Jun 21 21:59:53 2022
+# Make data base, printed on Tue Jun 21 23:20:12 2022
 
 # Variables
 
@@ -28,7 +29,7 @@ NVM_INC = /Users/srb/.nvm/versions/node/v16.15.0/include/node
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/srb/projects/sql.js
+CURDIR := /Users/srb/projects/sql.js-fork
 # makefile
 SHELL = /bin/sh
 # environment
@@ -54,15 +55,15 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 INFOPATH = /opt/homebrew/share/info:
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/41/t2szk6pj7wng3l2f7j381rpw0000gn/T/vscode-ipc-99695c07-a3b0-448e-bf79-bf3f45223fe2.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/41/t2szk6pj7wng3l2f7j381rpw0000gn/T/vscode-ipc-20fb0aca-e060-40f0-ab46-010bade67987.sock
 # environment
-VSCODE_CWD = /Users/srb/projects/ptr-static
+VSCODE_CWD = /Users/srb/projects/sql.js-fork
 # environment
 PATH = /Users/srb/.yarn/bin:/Users/srb/.config/yarn/global/node_modules/.bin:/Users/srb/Library/Preferences/netlify/helper/bin:/Users/srb/.rbenv/shims:/Users/srb/.nvm/versions/node/v16.15.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Apple/usr/bin
 # makefile (from `Makefile', line 49)
 EMFLAGS_WASM = -s WASM=1 -s ALLOW_MEMORY_GROWTH=1
 # environment
-LOG_DST = /Users/srb/Library/Application Support/Code/logs/20220601T202612/exthost65/dendron.dendron/dendron.log
+LOG_DST = /Users/srb/Library/Application Support/Code/logs/20220621T222932/exthost3/dendron.dendron/dendron.log
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # makefile (from `Makefile', line 58)
@@ -92,10 +93,9 @@ EMFLAGS_ASM = -s WASM=0
 # environment
 VSCODE_PIPE_LOGGING = true
 # makefile (from `Makefile', line 53)
- 
 EMFLAGS_OPTIMIZED = -Oz -flto --closure 1
 # environment
-PWD = /Users/srb/projects/sql.js
+PWD = /Users/srb/projects/sql.js-fork
 # environment
 HOMEBREW_CELLAR = /opt/homebrew/Cellar
 # environment
@@ -111,7 +111,7 @@ MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /De
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/srb/Library/Application Support/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = /Users/srb/Library/Application Support/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
 # environment
 LOGNAME = srb
 # environment
@@ -147,7 +147,7 @@ USER = srb
 # default
 MAKECMDGOALS := all
 # environment
-TERM_SESSION_ID = w0t2p0:02C54B80-F17A-483A-91A4-05E235BF23C4
+TERM_SESSION_ID = w0t0p0:53274485-B0D1-46FF-B9DA-23591787C8EB
 # environment
 LESS = -R
 # automatic
@@ -165,7 +165,7 @@ TMPDIR = /var/folders/41/t2szk6pj7wng3l2f7j381rpw0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/srb/Library/Application Support/Code/1.67.2-main.sock
+VSCODE_IPC_HOOK = /Users/srb/Library/Application Support/Code/1.68.0-main.sock
 # makefile
 MAKEFLAGS = Rrqp
 # makefile (from `Makefile', line 66)
@@ -179,7 +179,7 @@ TERM_PROGRAM_VERSION = 3.4.15
 # environment
 NVM_DIR = /Users/srb/.nvm
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.17124279.17124285.985618DF-5066-4C6F-8490-01AEF088AD7E
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.20746359.20746365.551CEFF0-AE50-4889-AC9E-A870AA375EDE
 # environment
 LC_TERMINAL_VERSION = 3.4.15
 # environment
@@ -191,7 +191,7 @@ HOMEBREW_PREFIX = /opt/homebrew
 # makefile (from `Makefile', line 20)
 SQLITE_COMPILATION_FLAGS = -Oz -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_DISABLE_LFS -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_THREADSAFE=0 -DSQLITE_ENABLE_NORMALIZE
 # environment
-ITERM_SESSION_ID = w0t2p0:02C54B80-F17A-483A-91A4-05E235BF23C4
+ITERM_SESSION_ID = w0t0p0:53274485-B0D1-46FF-B9DA-23591787C8EB
 # environment
 HOMEBREW_REPOSITORY = /opt/homebrew
 # environment
@@ -233,7 +233,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 41009
+VSCODE_PID = 3224
 # variable set hash-table stats:
 # Load=111/1024=11%, Rehash=0, Collisions=9/170=5%
 
@@ -243,9 +243,9 @@ VSCODE_PID = 41009
 
 # Directories
 
-# . (device 16777234, inode 20621359): 30 files, no impossibilities.
+# . (device 16777234, inode 20658903): 31 files, no impossibilities.
 
-# 30 files, no impossibilities in 1 directories.
+# 31 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -255,7 +255,7 @@ VSCODE_PID = 41009
 
 dist/worker.sql-asm.js: dist/sql-asm.js src/worker.js
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-21 21:48:47
+#  Last modified 2022-06-21 23:19:51
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -267,7 +267,7 @@ dist/worker.sql-asm.js: dist/sql-asm.js src/worker.js
 # Not a target:
 src/exported_runtime_methods.json:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-21 20:37:12
+#  Last modified 2022-06-21 22:07:41
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -280,6 +280,7 @@ all: optimized debug worker
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
+ 
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 .PHONY: debug optimized worker sqlite-src clean
@@ -289,7 +290,7 @@ all: optimized debug worker
 
 out/fileio.bc: sqlite-src/sqlite-amalgamation-3380500
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-21 21:26:17
+#  Last modified 2022-06-21 23:09:36
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 157):
@@ -300,7 +301,7 @@ out/fileio.bc: sqlite-src/sqlite-amalgamation-3380500
 
 out/extension-functions.bc: sqlite-src/sqlite-amalgamation-3380500
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-21 21:26:16
+#  Last modified 2022-06-21 23:09:34
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 152):
@@ -311,7 +312,7 @@ out/extension-functions.bc: sqlite-src/sqlite-amalgamation-3380500
 
 sqlite-src/sqlite-amalgamation-3380500/extension-functions.c: cache/extension-functions.c
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-21 20:53:07
+#  Last modified 2022-06-21 23:04:29
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 189):
@@ -323,7 +324,7 @@ sqlite-src/sqlite-amalgamation-3380500/extension-functions.c: cache/extension-fu
 
 cache/extension-functions.c:
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-21 20:53:07
+#  Last modified 2022-06-21 23:04:29
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 171):
@@ -346,7 +347,7 @@ sqlite-src: sqlite-src/sqlite-amalgamation-3380500 sqlite-src/sqlite-amalgamatio
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-21 21:25:11
+#  Last modified 2022-06-21 23:04:23
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -371,17 +372,16 @@ debug: dist/sql-asm-debug.js dist/sql-wasm-debug.js
 # Not a target:
 src/worker.js:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-21 20:37:12
+#  Last modified 2022-06-21 22:07:41
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
- 
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 src/shell-post.js:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-21 20:37:12
+#  Last modified 2022-06-21 22:07:41
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -390,7 +390,7 @@ src/shell-post.js:
 # Not a target:
 src/api.js:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-21 21:44:32
+#  Last modified 2022-06-21 22:08:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -404,7 +404,7 @@ src/api.js:
 
 dist/sql-asm-memory-growth.js: out/sqlite3.bc out/extension-functions.bc out/fileio.bc src/shell-pre.js src/shell-post.js src/api.js src/exported_functions.json src/exported_runtime_methods.json
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-21 21:48:16
+#  Last modified 2022-06-21 23:19:20
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 106):
@@ -416,7 +416,7 @@ dist/sql-asm-memory-growth.js: out/sqlite3.bc out/extension-functions.bc out/fil
 
 dist/sql-wasm-debug.js: out/sqlite3.bc out/extension-functions.bc out/fileio.bc src/shell-pre.js src/shell-post.js src/api.js src/exported_functions.json src/exported_runtime_methods.json
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-21 21:48:47
+#  Last modified 2022-06-21 23:19:51
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 85):
@@ -439,7 +439,7 @@ clean:
 # Not a target:
 src/shell-pre.js:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-21 20:37:12
+#  Last modified 2022-06-21 22:07:41
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -447,7 +447,7 @@ src/shell-pre.js:
 
 dist/worker.sql-wasm-debug.js: dist/sql-wasm-debug.js src/worker.js
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-21 21:48:48
+#  Last modified 2022-06-21 23:19:51
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 125):
@@ -456,7 +456,7 @@ dist/worker.sql-wasm-debug.js: dist/sql-wasm-debug.js src/worker.js
 
 dist/sql-wasm.js: out/sqlite3.bc out/extension-functions.bc out/fileio.bc src/shell-pre.js src/shell-post.js src/api.js src/exported_functions.json src/exported_runtime_methods.json
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-21 21:46:57
+#  Last modified 2022-06-21 23:18:02
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 100):
@@ -468,7 +468,7 @@ dist/sql-wasm.js: out/sqlite3.bc out/extension-functions.bc out/fileio.bc src/sh
 
 dist/worker.sql-wasm.js: dist/sql-wasm.js src/worker.js
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-21 21:48:48
+#  Last modified 2022-06-21 23:19:51
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 122):
@@ -486,7 +486,7 @@ optimized: dist/sql-asm.js dist/sql-wasm.js dist/sql-asm-memory-growth.js
 
 cache/sqlite-amalgamation-3380500.zip:
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-21 20:53:06
+#  Last modified 2022-06-21 23:04:28
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 167):
@@ -496,7 +496,7 @@ cache/sqlite-amalgamation-3380500.zip:
 
 dist/sql-asm-debug.js: out/sqlite3.bc out/extension-functions.bc out/fileio.bc src/shell-pre.js src/shell-post.js src/api.js src/exported_functions.json src/exported_runtime_methods.json
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-21 21:48:44
+#  Last modified 2022-06-21 23:19:47
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 79):
@@ -509,7 +509,7 @@ dist/sql-asm-debug.js: out/sqlite3.bc out/extension-functions.bc out/fileio.bc s
 # Not a target:
 src/exported_functions.json:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-21 21:27:18
+#  Last modified 2022-06-21 22:08:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -517,16 +517,17 @@ src/exported_functions.json:
 
 dist/worker.sql-asm-debug.js: dist/sql-asm-debug.js src/worker.js
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-21 21:48:48
+#  Last modified 2022-06-21 23:19:51
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 119):
 	cat $^ > $@
 	
 
+ 
 sqlite-src/sqlite-amalgamation-3380500: cache/sqlite-amalgamation-3380500.zip sqlite-src/sqlite-amalgamation-3380500/extension-functions.c
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-21 21:08:02
+#  Last modified 2022-06-21 23:08:11
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 179):
@@ -542,7 +543,7 @@ sqlite-src/sqlite-amalgamation-3380500: cache/sqlite-amalgamation-3380500.zip sq
 
 out/sqlite3.bc: sqlite-src/sqlite-amalgamation-3380500
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-21 21:26:13
+#  Last modified 2022-06-21 23:09:31
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 146):
@@ -553,7 +554,7 @@ out/sqlite3.bc: sqlite-src/sqlite-amalgamation-3380500
 
 dist/sql-asm.js: out/sqlite3.bc out/extension-functions.bc out/fileio.bc src/shell-pre.js src/shell-post.js src/api.js src/exported_functions.json src/exported_runtime_methods.json
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-21 21:46:10
+#  Last modified 2022-06-21 23:17:13
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -578,6 +579,6 @@ dist/sql-asm.js: out/sqlite3.bc out/extension-functions.bc out/fileio.bc src/she
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Jun 21 21:59:53 2022
+# Finished Make data base on Tue Jun 21 23:20:12 2022
 
  
