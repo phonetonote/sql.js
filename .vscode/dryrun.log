@@ -1,0 +1,59 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/srb/projects/sql.js'
+mkdir -p cache
+curl -LsSf 'https://www.sqlite.org/2022/sqlite-amalgamation-3380500.zip' -o cache/sqlite-amalgamation-3380500.zip
+mkdir -p cache
+curl -LsSf 'https://www.sqlite.org/contrib/download/extension-functions.c?get=25' -o cache/extension-functions.c
+mkdir -p sqlite-src/sqlite-amalgamation-3380500
+echo 'c68fa706d6d9ff98608044c00212473f9c14892f  ./cache/extension-functions.c' > cache/check.txt
+sha1sum -c cache/check.txt
+cp 'cache/extension-functions.c' sqlite-src/sqlite-amalgamation-3380500/extension-functions.c
+mkdir -p sqlite-src/sqlite-amalgamation-3380500
+echo 'bfad5c42b767520a546251b9876e4a4b127fb651c437b968b149070e09252807  ./cache/sqlite-amalgamation-3380500.zip' > cache/check.txt
+sha3sum -c cache/check.txt
+# We don't delete the sqlite_amalgamation folder. That's a job for clean
+# Also, the extension functions get copied here, and if we get the order of these steps wrong,
+ 
+# this step could remove the extension functions, and that's not what we want
+unzip -u 'cache/sqlite-amalgamation-3380500.zip' -d sqlite-src/
+touch sqlite-src/sqlite-amalgamation-3380500
+mkdir -p out
+# Generate llvm bitcode
+emcc -Oz -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_DISABLE_LFS -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_THREADSAFE=0 -DSQLITE_ENABLE_NORMALIZE -c sqlite-src/sqlite-amalgamation-3380500/sqlite3.c -o out/sqlite3.bc
+mkdir -p out
+# Generate llvm bitcode
+emcc -Oz -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_DISABLE_LFS -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_THREADSAFE=0 -DSQLITE_ENABLE_NORMALIZE -c sqlite-src/sqlite-amalgamation-3380500/extension-functions.c -o out/extension-functions.bc
+mkdir -p out
+# Generate llvm bitcode
+emcc -Oz -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_DISABLE_LFS -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_THREADSAFE=0 -DSQLITE_ENABLE_NORMALIZE -c sqlite-src/sqlite-amalgamation-3380500/fileio.c -o out/fileio.bc
+ 
+emcc --memory-init-file 0 -s RESERVED_FUNCTION_POINTERS=64 -s ALLOW_TABLE_GROWTH=1 -s EXPORTED_FUNCTIONS=@src/exported_functions.json -s EXPORTED_RUNTIME_METHODS=@src/exported_runtime_methods.json -s SINGLE_FILE=0 -s NODEJS_CATCH_EXIT=0 -s NODEJS_CATCH_REJECTION=0 -Oz -flto --closure 1 -s WASM=0 out/sqlite3.bc out/extension-functions.bc out/fileio.bc --pre-js src/api.js -o dist/sql-asm.js
+mv dist/sql-asm.js out/tmp-raw.js
+ 
+cat src/shell-pre.js out/tmp-raw.js src/shell-post.js > dist/sql-asm.js
+rm out/tmp-raw.js
+emcc --memory-init-file 0 -s RESERVED_FUNCTION_POINTERS=64 -s ALLOW_TABLE_GROWTH=1 -s EXPORTED_FUNCTIONS=@src/exported_functions.json -s EXPORTED_RUNTIME_METHODS=@src/exported_runtime_methods.json -s SINGLE_FILE=0 -s NODEJS_CATCH_EXIT=0 -s NODEJS_CATCH_REJECTION=0 -Oz -flto --closure 1 -s WASM=1 -s ALLOW_MEMORY_GROWTH=1 out/sqlite3.bc out/extension-functions.bc out/fileio.bc --pre-js src/api.js -o dist/sql-wasm.js
+mv dist/sql-wasm.js out/tmp-raw.js
+cat src/shell-pre.js out/tmp-raw.js src/shell-post.js > dist/sql-wasm.js
+rm out/tmp-raw.js
+emcc --memory-init-file 0 -s RESERVED_FUNCTION_POINTERS=64 -s ALLOW_TABLE_GROWTH=1 -s EXPORTED_FUNCTIONS=@src/exported_functions.json -s EXPORTED_RUNTIME_METHODS=@src/exported_runtime_methods.json -s SINGLE_FILE=0 -s NODEJS_CATCH_EXIT=0 -s NODEJS_CATCH_REJECTION=0 -Oz -flto --closure 1 -s WASM=0 -s ALLOW_MEMORY_GROWTH=1 out/sqlite3.bc out/extension-functions.bc out/fileio.bc --pre-js src/api.js -o dist/sql-asm-memory-growth.js
+mv dist/sql-asm-memory-growth.js out/tmp-raw.js
+cat src/shell-pre.js out/tmp-raw.js src/shell-post.js > dist/sql-asm-memory-growth.js
+rm out/tmp-raw.js
+emcc --memory-init-file 0 -s RESERVED_FUNCTION_POINTERS=64 -s ALLOW_TABLE_GROWTH=1 -s EXPORTED_FUNCTIONS=@src/exported_functions.json -s EXPORTED_RUNTIME_METHODS=@src/exported_runtime_methods.json -s SINGLE_FILE=0 -s NODEJS_CATCH_EXIT=0 -s NODEJS_CATCH_REJECTION=0 -s ASSERTIONS=1 -O1 -s WASM=0 out/sqlite3.bc out/extension-functions.bc out/fileio.bc --pre-js src/api.js -o dist/sql-asm-debug.js
+mv dist/sql-asm-debug.js out/tmp-raw.js
+cat src/shell-pre.js out/tmp-raw.js src/shell-post.js > dist/sql-asm-debug.js
+rm out/tmp-raw.js
+ 
+emcc --memory-init-file 0 -s RESERVED_FUNCTION_POINTERS=64 -s ALLOW_TABLE_GROWTH=1 -s EXPORTED_FUNCTIONS=@src/exported_functions.json -s EXPORTED_RUNTIME_METHODS=@src/exported_runtime_methods.json -s SINGLE_FILE=0 -s NODEJS_CATCH_EXIT=0 -s NODEJS_CATCH_REJECTION=0 -s ASSERTIONS=1 -O1 -s WASM=1 -s ALLOW_MEMORY_GROWTH=1 out/sqlite3.bc out/extension-functions.bc out/fileio.bc --pre-js src/api.js -o dist/sql-wasm-debug.js
+mv dist/sql-wasm-debug.js out/tmp-raw.js
+cat src/shell-pre.js out/tmp-raw.js src/shell-post.js > dist/sql-wasm-debug.js
+rm out/tmp-raw.js
+ 
+cat dist/sql-asm.js src/worker.js > dist/worker.sql-asm.js
+cat dist/sql-asm-debug.js src/worker.js > dist/worker.sql-asm-debug.js
+cat dist/sql-wasm.js src/worker.js > dist/worker.sql-wasm.js
+cat dist/sql-wasm-debug.js src/worker.js > dist/worker.sql-wasm-debug.js
+ 
+make: Leaving directory `/Users/srb/projects/sql.js'
+ 
